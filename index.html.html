@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Trisha Thontepu | Portfolio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Newsreader:opsz,wght@6..72,400;6..72,500&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#F4F6F8;--ink:#101828;--muted:#4A5468;--cobalt:#2A3CCB;--gold:#F4B400;--card:#fff;--line:#D5DAE3;--bot:#E8ECF7;--on-cobalt:#fff;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0E1220;--ink:#ECEFF8;--muted:#A9B2C8;--cobalt:#8B99FF;--gold:#F4B400;--card:#171D33;--line:#2C3556;--bot:#222A47;--on-cobalt:#0E1220}}
+:root[data-theme="dark"]{--bg:#0E1220;--ink:#ECEFF8;--muted:#A9B2C8;--cobalt:#8B99FF;--gold:#F4B400;--card:#171D33;--line:#2C3556;--bot:#222A47;--on-cobalt:#0E1220}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-padding-top:calc(env(safe-area-inset-top,0px) + 64px);scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 1.125rem/1.65 'Newsreader',Georgia,serif}
+h1,h2,h3,.ui{font-family:'Bricolage Grotesque','Helvetica Neue',Arial,sans-serif}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--cobalt);outline-offset:3px;border-radius:4px}
+.wrap{max-width:1120px;margin:0 auto;padding:0 24px}
+header{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--bg);border-bottom:1px solid var(--line)}
+header .wrap{display:flex;justify-content:space-between;align-items:center;height:60px;gap:16px}
+header b{font:800 1.05rem 'Bricolage Grotesque',sans-serif}
+nav{display:flex;gap:20px;font:500 .95rem 'Bricolage Grotesque',sans-serif}
+nav a{text-decoration:none;color:var(--muted)}nav a:hover{color:var(--ink);text-decoration:underline;text-underline-offset:6px}
+.hero{padding:72px 0 48px}
+.hero h1{font-weight:800;font-size:clamp(2.4rem,7vw,5.2rem);line-height:1;letter-spacing:-.03em;margin:0 0 24px;max-width:15ch}
+.hero p{max-width:52ch;color:var(--muted);margin:0 0 28px}
+.btn{display:inline-block;font:700 1rem 'Bricolage Grotesque',sans-serif;background:var(--cobalt);color:var(--on-cobalt);padding:13px 22px;border-radius:999px;text-decoration:none;border:0;cursor:pointer}
+.btn:hover{filter:brightness(1.1)}
+.sec{display:grid;grid-template-columns:200px 1fr;gap:32px;padding:56px 0;border-top:1px solid var(--line)}
+.sec>h2{font-size:1.35rem;margin:0;position:sticky;top:calc(env(safe-area-inset-top,0px) + 80px);align-self:start;letter-spacing:-.01em}
+.body{max-width:66ch}.body p{margin:0 0 1em}
+.wide{max-width:none}
+.title{font:800 clamp(1.8rem,4vw,3rem)/1.05 'Bricolage Grotesque',sans-serif;letter-spacing:-.025em;margin:0 0 16px}
+dl.facts{display:grid;grid-template-columns:auto 1fr;gap:10px 28px;margin:24px 0 0;font-size:1rem}
+dl.facts dt{font:700 .95rem 'Bricolage Grotesque',sans-serif}dl.facts dd{margin:0;color:var(--muted)}
+.dec{list-style:none;padding:0;margin:0}
+.dec li{padding:18px 0;border-bottom:1px solid var(--line)}.dec li:first-child{padding-top:0}
+.dec h3{margin:0 0 4px;font-size:1.2rem}.dec p{margin:0;color:var(--muted)}
+/* prototype */
+.stage{position:relative;margin-top:8px}
+.stage::before{content:"";position:absolute;inset:18px -14px -14px 18px;background:var(--gold);border-radius:20px;z-index:0}
+.app{position:relative;z-index:1;display:grid;grid-template-columns:minmax(260px,1fr) 1.3fr;background:var(--card);border:2px solid var(--ink);border-radius:18px;overflow:hidden;font-family:'Bricolage Grotesque',sans-serif;font-size:1rem;line-height:1.4}
+.bar{grid-column:1/-1;display:flex;align-items:center;justify-content:space-between;gap:12px;padding:10px 16px;border-bottom:2px solid var(--ink);background:var(--bg)}
+.bar strong{font-weight:800}
+.seg{display:inline-flex;border:2px solid var(--ink);border-radius:999px;overflow:hidden}
+.seg button{font:700 .85rem 'Bricolage Grotesque',sans-serif;background:transparent;color:var(--ink);border:0;padding:5px 12px;cursor:pointer}
+.seg button[aria-pressed="true"]{background:var(--ink);color:var(--bg)}
+.dir{padding:16px;border-right:2px solid var(--ink);min-width:0}
+.dir input{width:100%;font:500 1rem 'Bricolage Grotesque',sans-serif;padding:10px 12px;border:2px solid var(--line);border-radius:10px;background:var(--bg);color:var(--ink)}
+.chips{display:flex;flex-wrap:wrap;gap:6px;margin:12px 0}
+.chip{font:600 .85rem 'Bricolage Grotesque',sans-serif;padding:5px 11px;border-radius:999px;border:2px solid var(--line);background:transparent;color:var(--ink);cursor:pointer}
+.chip[aria-pressed="true"]{border-color:var(--cobalt);background:var(--cobalt);color:var(--on-cobalt)}
+.list{list-style:none;margin:0;padding:0;display:grid;gap:8px}
+.list button{width:100%;text-align:left;background:transparent;color:var(--ink);border:2px solid var(--line);border-radius:12px;padding:10px 12px;cursor:pointer;font:inherit}
+.list button[aria-current="true"]{border-color:var(--cobalt);box-shadow:inset 4px 0 0 var(--cobalt)}
+.list b{display:block;font-weight:700}.list small{color:var(--muted)}
+.empty{color:var(--muted);padding:8px 2px}
+.prof{padding:18px;display:flex;flex-direction:column;min-width:0}
+.prof h3{margin:0;font-size:1.5rem;letter-spacing:-.01em}
+.tag{display:inline-block;font:600 .8rem 'Bricolage Grotesque',sans-serif;border:2px solid var(--line);border-radius:6px;padding:1px 8px;margin:6px 0 10px;color:var(--muted)}
+.tag.real{border-color:var(--cobalt);color:var(--cobalt)}
+.prof p.story{margin:0 0 14px;font-family:'Newsreader',Georgia,serif;font-size:1.05rem}
+.chat{flex:1;display:flex;flex-direction:column;border:2px solid var(--line);border-radius:14px;overflow:hidden;min-height:300px}
+.chat h4{margin:0;padding:8px 12px;font-size:.9rem;background:var(--bg);border-bottom:2px solid var(--line)}
+.msgs{flex:1;overflow-y:auto;padding:12px;display:flex;flex-direction:column;gap:8px;max-height:260px;min-height:150px}
+.m{max-width:85%;padding:8px 12px;border-radius:14px;background:var(--bot);animation:pop .15s ease-out}
+.m.me{align-self:flex-end;background:var(--cobalt);color:var(--on-cobalt)}
+@keyframes pop{from{transform:scale(.96);opacity:.4}to{transform:none;opacity:1}}
+.quick{display:flex;flex-wrap:wrap;gap:6px;padding:0 12px 8px}
+.send{display:flex;gap:8px;padding:10px 12px;border-top:2px solid var(--line)}
+.send input{flex:1;min-width:0;font:500 1rem 'Bricolage Grotesque',sans-serif;padding:9px 12px;border:2px solid var(--line);border-radius:10px;background:var(--bg);color:var(--ink)}
+.send .btn{padding:9px 18px}
+.note{font-size:.95rem;color:var(--muted);margin-top:30px}
+.next{padding-left:1.2em;margin:0}.next li{margin-bottom:.6em}
+.soon{background:var(--card);border:2px dashed var(--line);border-radius:16px;padding:28px}
+footer{border-top:1px solid var(--line);padding:32px 0 48px;color:var(--muted);font-size:1rem}
+@media (max-width:820px){
+ .sec{grid-template-columns:1fr;gap:16px}.sec>h2{position:static}
+ .app{grid-template-columns:1fr}.dir{border-right:0;border-bottom:2px solid var(--ink)}
+ .stage::before{inset:10px -8px -8px 10px}nav{gap:14px}
+}
+.tabs{display:flex;flex-wrap:wrap;gap:8px;margin:20px 0}
+.tabs .chip{font-size:.95rem;padding:8px 16px}.tabs .chip:disabled{opacity:.5;cursor:not-allowed}
+.pq{display:grid;grid-template-columns:330px 1fr;gap:48px;align-items:start}
+.phone{position:relative;width:330px;height:640px;border:10px solid #0B1220;border-radius:44px;background:#F3F5F9;overflow:hidden;font:500 13px/1.35 'Bricolage Grotesque',sans-serif;color:#0F1B33}
+.sb{position:absolute;top:0;left:0;right:0;height:32px;background:#0B1E42;color:#fff;font-weight:700;font-size:12px;padding:8px 24px;z-index:2}
+.sb::after{content:"";position:absolute;left:50%;top:6px;width:80px;height:20px;margin-left:-40px;background:#000;border-radius:12px}
+.ps{height:100%;overflow-y:auto;padding:44px 12px 20px}
+.ph-t{font-weight:800;font-size:15px;margin-bottom:10px}
+.pcard{background:#fff;border:1px solid #DDE3EE;border-radius:12px;padding:12px;margin-bottom:10px}
+.pcard small{display:block;color:#5A6782;font-size:11px}
+.pcard label{display:block;font-size:11px;font-weight:700;color:#5A6782;margin:10px 0 5px}
+.pcs{display:flex;flex-wrap:wrap;gap:6px}
+.pc{font-family:inherit;font-size:12px;font-weight:600;padding:7px 10px;border-radius:8px;border:1.5px solid #D5DCEA;background:#fff;color:#0F1B33;cursor:pointer}
+.pc[aria-pressed="true"]{background:#DCE9FF;border-color:#1F6FEB;color:#0B3B91}
+.pbtn{display:block;width:100%;font-family:inherit;font-size:13px;font-weight:700;padding:11px;border-radius:10px;border:0;background:#1F6FEB;color:#fff;cursor:pointer;margin-top:8px}
+.pbtn.alt{background:#fff;color:#1F6FEB;border:1.5px solid #1F6FEB}.pbtn:disabled{opacity:.4;cursor:not-allowed}
+.row{display:flex;justify-content:space-between;gap:8px;align-items:center}
+.pbar{height:6px;border-radius:9px;background:#E3E8F2;margin-top:8px;overflow:hidden}.pbar i{display:block;height:100%;background:#1F6FEB;transition:width .3s}
+.gcard{background:#0B1E42;color:#DDE6FA;border-radius:14px;padding:14px;margin-bottom:10px}
+.gnum{font-weight:800;font-size:46px;line-height:1.1;letter-spacing:-.02em}.gnum.lo{color:#FF7A7A}.gnum.ok{color:#3DDC97}
+.gbar{position:relative;height:8px;background:#26375F;border-radius:9px;margin:12px 0 6px}
+.gbar i{position:absolute;left:0;top:0;bottom:0;border-radius:9px;transition:width .6s}
+.gbar u{position:absolute;top:-4px;bottom:-4px;width:2px;background:#fff}
+.gr{display:flex;justify-content:space-between;padding:6px 0;border-top:1px solid #26375F}
+.li{display:grid;grid-template-columns:22px 1fr auto;gap:8px;align-items:center;padding:9px 0;border-top:1px solid #E3E8F2}
+.li:first-of-type{border-top:0}.li small{margin-top:1px}
+.fam{display:inline-block;background:#E6F6EE;color:#12694A;border-radius:5px;padding:0 6px;font-size:10px;font-weight:700;margin-top:3px}
+.up{color:#12694A;font-weight:700}
+.ann{max-width:44ch}.ann h3{font-size:1.6rem;line-height:1.1;margin:0 0 10px;letter-spacing:-.015em}.ann p{color:var(--muted);margin:0}
+.tiles{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin:24px 0}
+.tile{border:2px solid var(--ink);border-radius:14px;padding:16px;background:var(--card)}
+.tile h3{margin:0 0 4px;font-size:1.1rem}.tile p{margin:0 0 10px;color:var(--muted);font-size:1rem;line-height:1.5}
+.who span{display:inline-block;font:700 .75rem 'Bricolage Grotesque',sans-serif;border-radius:999px;padding:2px 10px;margin-right:6px;background:var(--bot)}
+.sub{font:700 1.2rem 'Bricolage Grotesque',sans-serif;margin:40px 0 14px}
+.qs{list-style:none;padding:0;margin:0;display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.qs li{border-top:4px solid var(--cobalt);padding-top:10px;font-size:1rem;line-height:1.45;color:var(--muted)}.qs b{display:block;font-family:'Bricolage Grotesque',sans-serif;color:var(--ink);margin-bottom:2px}
+table.ins{border-collapse:collapse;width:100%;font-size:1rem}
+table.ins th,table.ins td{text-align:left;padding:10px 12px;border-bottom:1px solid var(--line);vertical-align:top}table.ins th{font-family:'Bricolage Grotesque',sans-serif}
+@media (max-width:820px){.pq{grid-template-columns:1fr;justify-items:center;gap:24px}.ann{max-width:none}.tiles{grid-template-columns:1fr}.qs{grid-template-columns:1fr 1fr}}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.m{animation:none}.pbar i,.gbar i{transition:none}}
+.gnum.mid{color:#F5C542}.gbar u.st{background:#6FA8FF}.pbtn.grn{background:#1FA75A}.rg{width:100%;accent-color:#1F6FEB;margin:4px 0}
+.pill{font-size:10px;padding:2px 8px;border-radius:99px;background:#26375F}
+.ctx{display:block;width:100%;text-align:left;background:none;border:0;border-top:1px solid #E3E8F2;padding:9px 0;font-family:inherit;color:inherit;cursor:pointer}
+.cb{padding:0 0 10px;font-size:12px}.cb p{margin:0 0 6px}.gr2{display:flex;justify-content:space-between;gap:8px;padding:4px 0;border-top:1px solid #E3E8F2}
+.ba{display:flex;flex-wrap:wrap;gap:12px;margin-top:22px}.ba div{border:2px solid var(--ink);border-radius:12px;padding:10px 14px;background:var(--card)}
+.ba small{display:block;color:var(--muted);font-size:.85rem}.ba b{font-family:'Bricolage Grotesque',sans-serif}
+.hg{border:2px solid var(--ink);border-radius:16px;overflow:hidden;background:var(--card)}
+.hgh{background:#0B1E42;color:#fff;font:800 1.1rem 'Bricolage Grotesque',sans-serif;padding:14px 20px}
+.hgb{display:grid;grid-template-columns:250px 1fr}.hgs{border-right:2px solid var(--line);display:flex;flex-direction:column}
+.hgs button{display:flex;gap:10px;align-items:center;text-align:left;font:700 1rem 'Bricolage Grotesque',sans-serif;background:none;color:var(--ink);border:0;border-bottom:1px solid var(--line);padding:14px 16px;cursor:pointer}
+.hgs button[aria-selected="true"]{background:var(--cobalt);color:var(--on-cobalt)}
+.hgs i{font-style:normal;width:26px;height:26px;border-radius:50%;display:grid;place-items:center;border:2px solid currentColor;font-size:.85rem;flex:none}
+.hgd{padding:20px 24px}.hgd h4{margin:0 0 8px;font:800 1.5rem 'Bricolage Grotesque',sans-serif;letter-spacing:-.01em}
+.role{display:inline-block;font:700 .75rem 'Bricolage Grotesque',sans-serif;padding:2px 10px;border-radius:99px;background:var(--gold);color:#101828;margin-bottom:8px}
+.sst{list-style:none;padding:0;margin:12px 0 18px;display:grid;gap:10px}.sst li{display:grid;grid-template-columns:38px 1fr;gap:10px;font-size:1rem;line-height:1.45}
+.sst b{font:700 .8rem 'Bricolage Grotesque',sans-serif;border:2px solid var(--ink);border-radius:50%;width:34px;height:34px;display:grid;place-items:center}
+.sst small{display:block;color:var(--muted);font-size:.95rem}
+.mk{border:2px solid var(--line);border-radius:12px;padding:14px;background:var(--bg);display:flex;flex-wrap:wrap;gap:10px;align-items:center;font:600 .9rem 'Bricolage Grotesque',sans-serif}
+.mb{padding:7px 14px;border-radius:8px;background:#1F6FEB;color:#fff}.mb.g{background:#1FA75A}.mb.o{background:var(--card);color:var(--ink);border:2px solid var(--line)}
+.rb{flex:1;min-width:120px;height:8px;border-radius:9px;background:var(--line);overflow:hidden}.rb i{display:block;height:100%;background:#E5484D}
+table.kpi td.ty{color:#fff;font-family:'Bricolage Grotesque',sans-serif;font-weight:700;width:110px}
+td.f{background:#3F7D4E}td.b{background:#8F3D6E}td.o{background:#3A62A8}
+@media (max-width:820px){.hgb{grid-template-columns:1fr}.hgs{border-right:0;border-bottom:2px solid var(--line);flex-direction:row;overflow-x:auto}.hgs button{white-space:nowrap;border-bottom:0}}
+@media (max-width:640px){header .wrap{height:auto;padding-top:10px;padding-bottom:10px;flex-wrap:wrap}nav{flex-wrap:wrap;gap:8px 14px}}
+.btns{display:flex;flex-wrap:wrap;gap:12px}.btn.alt{background:transparent;color:var(--ink);border:2px solid var(--ink)}
+.evo{display:grid;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));gap:36px 24px;margin:24px 0 32px}
+.evo figure{margin:0}.evo figcaption{margin-top:16px;max-width:34ch}
+.evo figcaption b{display:block;font:800 1.15rem 'Bricolage Grotesque',sans-serif;margin-bottom:4px}
+.evo figcaption p{margin:0;color:var(--muted);font-size:1rem;line-height:1.5}
+.phone.mini{width:270px;height:560px;font-size:11.5px}
+.mini .pbtn{text-align:center;margin-top:6px;cursor:default}
+.hl{outline:2px dashed #F4B400;outline-offset:3px}
+.quote{border-left:4px solid var(--gold);margin:10px 0;padding:2px 16px;font-size:1.15rem;font-style:italic;max-width:50ch}
+.dlg{flex:1 1 260px;border:2px solid var(--line);border-radius:12px;padding:14px;background:var(--card);font-weight:500}
+.opt{border:2px solid var(--line);border-radius:10px;padding:8px 10px;margin-top:8px}.dlg small{display:block;color:var(--muted);font-weight:500}
+</style>
+</head>
+<body>
+<header><div class="wrap"><b class="ui">Trisha Thontepu</b>
+<nav aria-label="Sections"><a href="#logan">Logan Connect</a><a href="#priceiq">PriceIQ</a><a href="https://github.com/Trisha-Thontepu">GitHub</a><a href="https://www.linkedin.com/in/trisha-thontepu/">LinkedIn</a><a href="mailto:thonteputrisha@gmail.com">Email</a></nav></div></header>
+
+<main class="wrap">
+<section class="hero">
+<h1>Software for the neighborhood I grew up in.</h1>
+<p>I study computer science, data science, and business at UC Berkeley. The work below shows how I move from a real problem to a design, and from a design to running code.</p>
+<div class="btns"><a class="btn" href="#prototype">Try the Logan Connect prototype</a><a class="btn alt" href="https://github.com/Trisha-Thontepu/logan-connect" target="_blank" rel="noopener">See the code on GitHub</a></div>
+</section>
+
+<section class="sec" id="logan">
+<h2>Logan Connect</h2>
+<div class="body">
+<p class="title">A directory and text-to-book system for Latinx-owned businesses in Logan Heights, San Diego.</p>
+<p>It started with my mother's nail salon, Logan Nails Spa on National Ave, and grew into a neighborhood directory with bilingual booking by text message.</p>
+<dl class="facts">
+<dt>Role</dt><dd>Design and full-stack development</dd>
+<dt>Stack</dt><dd>React (Vite), Node and Express, PostgreSQL</dd>
+<dt>Scope</dt><dd>Searchable directory, bilingual business profiles, SMS booking engine</dd>
+<dt>Status</dt><dd>Working prototype. SMS runs through a simulator, with a Twilio-compatible webhook ready.</dd>
+<dt>Code</dt><dd><a href="https://github.com/Trisha-Thontepu/logan-connect">github.com/Trisha-Thontepu/logan-connect</a></dd>
+</dl>
+</div>
+</section>
+
+<section class="sec">
+<h2>The problem</h2>
+<div class="body">
+<p>Small, family-run businesses in Logan Heights are often reached by phone or by walking in. Many customers speak Spanish first, and most booking tools assume an English-speaking customer with a new app to install.</p>
+<p>The design question was simple: what is the lowest-friction way to find a local shop and book with it, in the language the customer already uses?</p>
+</div>
+</section>
+
+<section class="sec">
+<h2>Key decisions</h2>
+<div class="body"><ul class="dec">
+<li><h3>Text messages, not another app</h3><p>Everyone already has SMS. Booking by text means no download, no account, and nothing new to learn.</p></li>
+<li><h3>The language follows the customer</h3><p>The engine reads the first message and replies in English or Spanish, then stays in that language for the whole conversation.</p></li>
+<li><h3>One real anchor, clearly labeled demos</h3><p>Logan Nails Spa is a real business. The other five listings are placeholders styled after the neighborhood, and the interface marks them as demo listings so nothing is presented as real that is not.</p></li>
+<li><h3>The demo runs the real booking path</h3><p>In the full app, the "Try it" widget calls the same engine that a carrier webhook would call. That keeps the demo honest and makes going live a configuration change.</p></li>
+</ul></div>
+</section>
+
+<section class="sec" id="prototype">
+<h2>Interactive prototype</h2>
+<div class="wide">
+<p class="body">Pick a business, switch the language, then text it. Try "hi" or "hola", or send a full request like "manicure tomorrow 2pm".</p>
+<div class="stage">
+<div class="app" role="group" aria-label="Logan Connect prototype">
+<div class="bar"><strong id="brand">Logan Connect</strong>
+<div class="seg" role="group" aria-label="Language"><button id="lEn" aria-pressed="true">English</button><button id="lEs" aria-pressed="false">Español</button></div></div>
+<div class="dir">
+<input id="q" type="search" aria-label="Search businesses" placeholder="Search businesses">
+<div class="chips" id="chips"></div>
+<ul class="list" id="list"></ul>
+</div>
+<div class="prof" id="prof"></div>
+</div>
+</div>
+<p class="body note">This page runs the booking logic in your browser. In the full project it runs on an Express server against PostgreSQL, and the directory also has a Leaflet map. See <a href="https://github.com/Trisha-Thontepu/logan-connect" target="_blank" rel="noopener">the repo</a> for the complete stack.</p>
+</div>
+</section>
+
+<section class="sec">
+<h2>What comes next</h2>
+<div class="body">
+<p>Building the prototype showed me where it stops being enough. These are the next iterations, in the order I would tackle them.</p>
+<ol class="next">
+<li><b>Owner tools.</b> There is no login yet, so owners cannot manage appointments or edit or add their own listing. That is the biggest gap between a demo and a product.</li>
+<li><b>Real listings.</b> Replace the placeholder businesses with real Logan Heights shops, added by their owners.</li>
+<li><b>A sturdier date parser.</b> The day and time parsing is regex-based. A production version needs a date library and timezone handling.</li>
+<li><b>A live phone number.</b> Point a Twilio number at the existing webhook to move from simulated to real SMS.</li>
+</ol>
+</div>
+</section>
+
+<section class="sec" id="priceiq">
+<h2>PriceIQ</h2>
+<div class="body">
+<p class="title">A pricing assistant that shows sales reps whether a quote hits its margin target, and closes the gap in one tap.</p>
+<p>I built PriceIQ and supported its pilot during my internship at Bain, for a technology reseller. Reps used to gather deal history by hand before setting a price. PriceIQ matches each new deal to similar past deals, using clustering on closed-won transactions, and turns that history into a recommended price.</p>
+<dl class="facts">
+<dt>Role</dt><dd>Product build, pricing analytics, pilot enablement</dd>
+<dt>Client</dt><dd>A technology value-added reseller (anonymized)</dd>
+<dt>Platform</dt><dd>Desktop and mobile app</dd>
+<dt>Pilot</dt><dd>Two months with 24 selected sales reps</dd>
+<dt>Data</dt><dd>Every customer, product, and number in the prototype below is invented.</dd>
+</dl></div>
+</section>
+
+<section class="sec">
+<h2>The problem</h2>
+<div class="body">
+<p>Deals were priced from memory and manual research. Each rep pulled their own history, so two reps could quote the same kind of deal at very different margins, and nobody saw a shortfall until the quote was already out.</p>
+<p>The design question: what is the fewest taps between "I have a quote" and "I know it meets target"?</p>
+</div>
+</section>
+
+<section class="sec" id="piq-proto">
+<h2>Interactive prototype</h2>
+<div class="wide">
+<p class="body">Fill in the sample quote, classify the line items, then unlock the guidance. The notes beside the phone explain each design choice.</p>
+<div class="tabs" id="pqTabs"></div>
+<div class="pq"><div class="phone" role="group" aria-label="PriceIQ prototype"><div class="sb">9:41</div><div class="ps" id="ps"></div></div>
+<aside class="ann" aria-live="polite" id="ann"></aside></div>
+</div>
+</section>
+
+<section class="sec" id="evolution">
+<h2>How the design evolved</h2>
+<div class="wide">
+<p class="body">Four screens show how the guidance view changed, plus the admin tools that supported the pilot. Each one is redrawn with sample data.</p>
+<div class="evo" id="evo"></div>
+<div class="ba"><div><small>Margin</small><b>8.4% to 16.4%</b></div><div><small>Change</small><b>+8.0 pts</b></div><div><small>Gap to target</small><b>$19,000 to $0</b></div></div>
+<p class="body" style="margin-top:14px">Accept suggestion (Target) applies the recommended pricing across every line in one tap.</p>
+<p class="quote">I used to manually gather this data. This tool will be extremely helpful.</p>
+<p class="quote">I feel confident that what you have built will help us do our jobs better.</p>
+<p class="body note" style="margin-top:8px">Feedback from pilot participants.</p>
+</div>
+</section>
+
+<section class="sec">
+<h2>Pilot enablement</h2>
+<div class="wide">
+<p class="body">A pricing tool only works if reps trust it and use it. For the pilot, the team delivered more than ten training sessions, about 20 hours in total, across leaders, sales reps, and business operations.</p>
+<div class="tiles">
+<div class="tile"><h3>Kickoff trainings</h3><p>Built excitement with leaders and reps, and showed how pricing intelligence lands in a seller's hands.</p><div class="who"><span>Leaders</span><span>Reps</span></div></div>
+<div class="tile"><h3>Technical and support trainings</h3><p>Taught reps to use the deeper deal insights, beyond the margin number.</p><div class="who"><span>Reps</span><span>Operations</span></div></div>
+<div class="tile"><h3>How-to guides</h3><p>Quick-reference guides reps could keep open while quoting.</p><div class="who"><span>Reps</span></div></div>
+<div class="tile"><h3>Success metrics</h3><p>Margin improvement on pilot deals, the gap between first and final quote, and the share of deals in the green margin band.</p><div class="who"><span>Leaders</span></div></div>
+</div>
+<h3 class="sub">How-to guide for reps and inside sales reps</h3>
+<div class="hg"><div class="hgh">PriceIQ how-to guide</div><div class="hgb"><div class="hgs" id="hgs" role="tablist"></div><div class="hgd" id="hgd" aria-live="polite"></div></div></div>
+<h3 class="sub">Deal insights, mapped to the questions reps ask</h3>
+<div style="overflow-x:auto"><table class="ins"><tr><th>Insight</th><th>The rep asks</th><th>What it shows</th></tr>
+<tr><td>COGS detail</td><td>Am I paying the lowest reasonable cost from the manufacturer?</td><td>Median cost paid for specific products, and how this quote's costs compare with past deals</td></tr>
+<tr><td>Customer history</td><td>How has this customer's margin trended? Am I in line?</td><td>Margin over time, and the median across the last ten transactions</td></tr>
+<tr><td>Similar green deals</td><td>What margins did other sellers achieve on comparable deals?</td><td>Margins of top-performing past deals, and what was sold within them</td></tr>
+<tr><td>Smart facts</td><td>What else can I find quickly?</td><td>Margin and cost performance against comparable deals, plus partner pricing updates</td></tr></table></div>
+<h3 class="sub">Pilot KPI dashboard</h3>
+<p class="body">Every KPI is checked at a pre-pilot baseline, at week 2, at the midpoint, and at the end of the pilot.</p>
+<div style="overflow-x:auto"><table class="ins kpi"><tr><th>Type</th><th>KPI</th><th>What it measures</th><th>Source</th></tr>
+<tr><td class="ty f" rowspan="2">Financial</td><td>Pilot seller margin outcome</td><td>Average margin and gross profit for pilot sellers, against prior years</td><td>Tool-derived</td></tr>
+<tr><td>Margin improvement from tool usage</td><td>Difference between the first quote configuration and the final quote sent</td><td>Tool-derived</td></tr>
+<tr><td class="ty b" rowspan="4">Behavioral</td><td>User confidence in guidance</td><td>Whether reps and ISRs find the guidance actionable</td><td>Rep feedback</td></tr>
+<tr><td>Usefulness of additional insights</td><td>Whether COGS and smart facts improved outcomes</td><td>Rep feedback</td></tr>
+<tr><td>Intent to continue after the pilot</td><td>Whether reps plan to keep using the tool</td><td>Rep feedback</td></tr>
+<tr><td>Tool usage rate</td><td>Deals run through the tool, out of all eligible bookings</td><td>Admin-reconciled</td></tr>
+<tr><td class="ty o" rowspan="2">Operational</td><td>Guidance layer efficiency</td><td>Whether the tool sped up quote turnaround</td><td>Rep feedback</td></tr>
+<tr><td>Deal distribution by margin band</td><td>Share of in-scope deals that are green, yellow, or red</td><td>Tool-derived</td></tr></table></div>
+</div>
+</section>
+</main>
+
+<footer><div class="wrap">Trisha Thontepu. <a href="mailto:thonteputrisha@gmail.com">thonteputrisha@gmail.com</a>. <a href="https://www.linkedin.com/in/trisha-thontepu/">LinkedIn</a>. <a href="https://github.com/Trisha-Thontepu">GitHub</a>.</div></footer>
+
+<script>
+const BIZ=[
+{id:'nails',name:'Logan Nails Spa',cat:'beauty',addr:'1985 National Ave',real:true,en:'A family-run nail salon on National Ave and the first business in Logan Connect.',es:'Un salón de uñas familiar en National Ave y el primer negocio de Logan Connect.'},
+{id:'perla',name:'Panadería La Perla',cat:'food',en:'Pan dulce baked fresh each morning.',es:'Pan dulce recién horneado cada mañana.'},
+{id:'portal',name:'Taquería El Portal',cat:'food',en:'Tacos and aguas frescas for lunch and dinner.',es:'Tacos y aguas frescas para el almuerzo y la cena.'},
+{id:'chuy',name:'Barbería Don Chuy',cat:'beauty',en:'Classic cuts and beard trims.',es:'Cortes clásicos y arreglo de barba.'},
+{id:'lav',name:'Lavandería Rápida Logan',cat:'services',en:'Self-service and drop-off laundry.',es:'Lavandería de autoservicio y servicio a domicilio.'},
+{id:'bella',name:'Estética Bella Vida',cat:'beauty',en:'Hair, color, and styling.',es:'Cabello, color y peinados.'}];
+const CAT={all:['All','Todos'],beauty:['Beauty','Belleza'],food:['Food','Comida'],services:['Services','Servicios']};
+const UI={en:{search:'Search businesses',none:'No businesses match. Try a different search or category.',demo:'Demo listing',real:'Real business',chat:n=>`Text ${n} to book`,ph:'Type a message',send:'Send',q:['hi','manicure tomorrow 2pm']},
+es:{search:'Buscar negocios',none:'Ningún negocio coincide. Pruebe otra búsqueda o categoría.',demo:'Ejemplo de demostración',real:'Negocio real',chat:n=>`Escriba a ${n} para reservar`,ph:'Escriba un mensaje',send:'Enviar',q:['hola','pedicura mañana 10am']}};
+const SV=[{k:['manicur'],en:'manicure',es:'manicura'},{k:['pedicur'],en:'pedicure',es:'pedicura'},{k:['haircut','corte'],en:'haircut',es:'corte'},{k:['beard','barba'],en:'beard trim',es:'barba'}];
+const DAY=[{k:['today','hoy'],en:'today',es:'hoy'},{k:['tomorrow','mañana','manana'],en:'tomorrow',es:'mañana'},
+{k:['monday','lunes'],en:'Monday',es:'el lunes'},{k:['tuesday','martes'],en:'Tuesday',es:'el martes'},{k:['wednesday','miércoles','miercoles'],en:'Wednesday',es:'el miércoles'},
+{k:['thursday','jueves'],en:'Thursday',es:'el jueves'},{k:['friday','viernes'],en:'Friday',es:'el viernes'},{k:['saturday','sábado','sabado'],en:'Saturday',es:'el sábado'},{k:['sunday','domingo'],en:'Sunday',es:'el domingo'}];
+const MSG={en:{hi:n=>`Hi! This is ${n}. `,svc:'What would you like? Manicure, pedicure, haircut, or beard trim.',day:'Which day works for you?',time:'What time? For example, 2pm.',
+booked:(n,s,d,t)=>`You're booked${s?` for a ${s.en}`:''} ${d.en} at ${t}. See you at ${n}. Reply CANCEL to cancel.`,cancelled:'Your appointment is cancelled. Text us anytime to book again.',nothing:'You have no appointment to cancel.',already:'You already have an appointment. Reply CANCEL to cancel it.'},
+es:{hi:n=>`¡Hola! Le escribe ${n}. `,svc:'¿Qué desea? Manicura, pedicura, corte o barba.',day:'¿Qué día le conviene?',time:'¿A qué hora? Por ejemplo, 2pm.',
+booked:(n,s,d,t)=>`Su cita${s?` de ${s.es}`:''} es ${d.es} a las ${t}. Nos vemos en ${n}. Responda CANCELAR para cancelar.`,cancelled:'Su cita fue cancelada. Escríbanos cuando quiera para reservar de nuevo.',nothing:'No tiene ninguna cita para cancelar.',already:'Ya tiene una cita. Responda CANCELAR para cancelarla.'}};
+
+let ui='en',cat='all',cur=BIZ[0],chat;
+const $=id=>document.getElementById(id);
+const fresh=()=>({msgs:[],lang:null,svc:null,day:null,time:null,ask:null,done:false,n:0});
+
+function fmtTime(m){let h=+m[1],mi=m[2]||'00',ap=(m[3]||'').replace(/\./g,'').toLowerCase();
+ if(h<1||h>23)return null;
+ if(!ap){ap=h>=13?'pm':(h>=8&&h<12)?'am':'pm'}
+ if(h>12)h-=12;return `${h}:${mi} ${ap.toUpperCase()}`}
+
+function reply(b,st,raw){
+ const t=raw.toLowerCase();
+ if(!st.lang)st.lang=/hola|buenas|quiero|cita|gracias|ma[ñn]ana|u[ñn]as|manicura|pedicura|cancelar|corte|barba|necesito/.test(t)?'es':'en';
+ const M=MSG[st.lang],first=st.n===0;st.n++;
+ const hi=first?M.hi(b.name):'';
+ if(/cancel/.test(t)){const had=st.done;Object.assign(st,{svc:null,day:null,time:null,ask:null,done:false});return had?M.cancelled:M.nothing}
+ if(st.done)return M.already;
+ for(const s of SV)if(s.k.some(k=>t.includes(k)))st.svc=s;
+ for(const d of DAY)if(d.k.some(k=>t.includes(k)))st.day=d;
+ const m=t.match(/(\d{1,2})(?::(\d{2}))?\s*(a\.?m\.?|p\.?m\.?)?/);
+ if(m&&(m[2]||m[3]||st.ask==='time')){const f=fmtTime(m);if(f)st.time=f}
+ if(b.cat==='beauty'&&!st.svc){st.ask='svc';return hi+M.svc}
+ if(!st.day){st.ask='day';return hi+M.day}
+ if(!st.time){st.ask='time';return hi+M.time}
+ st.done=true;return M.booked(b.name,st.svc,st.day,st.time)}
+
+function renderList(){
+ const q=$('q').value.trim().toLowerCase(),L=ui==='en'?0:1;
+ $('chips').replaceChildren(...Object.keys(CAT).map(k=>{const c=document.createElement('button');c.className='chip';c.textContent=CAT[k][L];c.setAttribute('aria-pressed',String(cat===k));c.onclick=()=>{cat=k;renderList()};return c}));
+ const rows=BIZ.filter(b=>(cat==='all'||b.cat===cat)&&(b.name+' '+b[ui]).toLowerCase().includes(q));
+ const ul=$('list');ul.replaceChildren();
+ if(!rows.length){const p=document.createElement('li');p.className='empty';p.textContent=UI[ui].none;ul.append(p);return}
+ rows.forEach(b=>{const li=document.createElement('li'),bt=document.createElement('button');
+  bt.setAttribute('aria-current',String(b===cur));
+  const n=document.createElement('b');n.textContent=b.name;const s=document.createElement('small');s.textContent=CAT[b.cat][L]+(b.addr?', '+b.addr:'');
+  bt.append(n,s);bt.onclick=()=>{cur=b;chat=fresh();renderList();renderProf()};li.append(bt);ul.append(li)})}
+
+function bubble(txt,me){const d=document.createElement('div');d.className='m'+(me?' me':'');d.textContent=txt;$('msgs').append(d);$('msgs').scrollTop=1e5}
+
+function renderProf(){
+ const T=UI[ui],p=$('prof');p.replaceChildren();
+ const h=document.createElement('h3');h.textContent=cur.name;
+ const tag=document.createElement('span');tag.className='tag'+(cur.real?' real':'');tag.textContent=cur.real?T.real:T.demo;
+ const st=document.createElement('p');st.className='story';st.textContent=cur[ui];
+ const c=document.createElement('div');c.className='chat';
+ c.innerHTML='<h4></h4><div class="msgs" id="msgs" aria-live="polite"></div><div class="quick"></div><div class="send"><input id="inp" aria-label="Message"><button class="btn" id="go"></button></div>';
+ p.append(h,tag,st,c);
+ c.querySelector('h4').textContent=T.chat(cur.name);
+ const inp=$('inp');inp.placeholder=T.ph;$('go').textContent=T.send;
+ const qk=c.querySelector('.quick');
+ T.q.forEach(x=>{const b=document.createElement('button');b.className='chip';b.textContent=x;b.onclick=()=>send(x);qk.append(b)});
+ const send=v=>{v=v.trim();if(!v)return;bubble(v,true);inp.value='';setTimeout(()=>bubble(reply(cur,chat,v),false),350)};
+ $('go').onclick=()=>send(inp.value);inp.onkeydown=e=>{if(e.key==='Enter')send(inp.value)};
+ chat.msgs.forEach(()=>{})}
+
+function setLang(l){ui=l;$('lEn').setAttribute('aria-pressed',String(l==='en'));$('lEs').setAttribute('aria-pressed',String(l==='es'));
+ $('q').placeholder=UI[l].search;$('q').setAttribute('aria-label',UI[l].search);chat=fresh();renderList();renderProf()}
+$('lEn').onclick=()=>setLang('en');$('lEs').onclick=()=>setLang('es');$('q').oninput=renderList;
+chat=fresh();renderList();renderProf();
+
+/* PriceIQ prototype (all data invented) */
+const LN=[
+{id:'hw',n:'HCI server nodes',fam:'Hyperconverged',c:137000,p:148000,r:160000,s:168000},
+{id:'sw',n:'Software subscription, 3 years',fam:'Subscription software',c:56500,p:62000,r:68000,s:71000},
+{id:'fr',n:'Freight and insurance',fam:'Freight',c:6000,p:6000,r:6000,s:6000},
+{id:'sv',n:'Deployment services',fam:'Services',c:29500,p:34000,r:40000,s:42000}];
+const OPT={fte:['Small, under 250','Mid-market, 250 to 5K','Enterprise, over 5K'],terms:['Net 30','Net 45','Net 60','Net 90'],reg:['No deal registration','Deal registered'],ren:['New business','Renewal'],take:['Regular opportunity','Takeover opportunity'],ful:['Drop ship','Special order','Inventory']};
+const CLS=['Hardware','Software','Services','Freight'],REQ=['fte','terms','reg','ren','take'],TARGET=16;
+const PQ={f:{},ful:{},tab:0,sel:{hw:1,sw:1,fr:0,sv:1},cls:{},bulk:'Hardware',fam:false,mode:'orig',ep:{},open:null,shown:null};
+const ANN=[
+['Unlock guidance before showing it','Recommendations depend on deal context, so the app collects it first and shows progress toward unlocking guidance. Chips replace dropdowns so every option is one thumb tap. Guidance and Edit prices unlock once all five steps are done, or use Fill in sample answers to skip ahead.'],
+['Bulk actions for long quotes','Real quotes can run to dozens of lines. Reps select many lines and classify them in one action. Matching product families shows how each line maps to comparable past deals.'],
+['Margin is the hero number','One large number, colored red, yellow, or green against the target, answers the first question a rep has. Observations explain the gap, and two accept buttons apply Target or Stretch pricing to every line at once. Reset stays visible so trying it feels safe.'],
+['Edit prices, with cost locked','Reps can still adjust the unit price of any line and watch the deal margin move. COGS is locked to the negotiated cost, so the only levers are the ones a rep actually controls.']];
+const done=()=>REQ.filter(k=>PQ.f[k]).length;
+const money=n=>'$'+Math.round(n).toLocaleString('en-US');
+const chips=(g,multi)=>OPT[g].map(o=>`<button class="pc" data-g="${g}" data-v="${o}" aria-pressed="${multi?!!PQ.ful[o]:PQ.f[g]===o}">${o}</button>`).join('');
+const pr=l=>PQ.ep[l.id]??(PQ.mode==='target'?l.r:PQ.mode==='stretch'?l.s:l.p);
+const tot=()=>{let p=0,c=0;LN.forEach(l=>{p+=pr(l);c+=l.c});return{p,c,g:p-c,m:(p-c)/p*100}};
+const base=()=>{let p=0,c=0;LN.forEach(l=>{p+=l.p;c+=l.c});return{p,g:p-c,m:(p-c)/p*100}};
+const band=m=>m>=TARGET?'ok':m>=12?'mid':'lo';
+const BN={ok:'Green',mid:'Yellow',lo:'Red'},BC={ok:'#3DDC97',mid:'#F5C542',lo:'#FF7A7A'};
+const CTX={cogs:['COGS detail','Benchmark for 4 of 4 SKUs'],smart:['Smart facts','Key insights and partner updates'],hist:['Customer history','Last 10 transactions with this customer'],grn:['Similar green deals','8 comparable green deals']};
+const PEER={hw:139500,sw:57200,fr:6100,sv:30400};
+function ctxBody(k){
+ if(k==='cogs')return LN.map(l=>`<div class="gr2"><span>${l.n}</span><span>${money(l.c)} <small>vs ${money(PEER[l.id])} median</small></span></div>`).join('');
+ if(k==='smart')return '<p>Partner pricing update: hardware list prices rise 2% next month.</p><p>Deals with this mix closed 1.8 points higher when services were priced as their own line.</p>';
+ if(k==='hist')return '<svg viewBox="0 0 200 50" width="100%" height="50" role="img" aria-label="Margin trend"><polyline fill="none" stroke="#1F6FEB" stroke-width="2" points="0,30 22,24 44,34 66,20 88,26 110,14 132,22 154,18 176,28 198,16"/></svg><small>Median margin across the last 10 transactions: 14.2% (sample data)</small>';
+ return [18.4,17.9,19.2].map((v,i)=>`<div class="row"><small>Deal ${i+1}</small><b>${v}%</b></div><div class="pbar"><i style="width:${v/25*100}%"></i></div>`).join('')+'<small style="margin-top:6px">Median of 8 comparable green deals: 18.1% (sample data)</small>'}
+
+function screen(){
+ const d=done();
+ if(PQ.tab===0)return `<div class="ph-t">Quote setup: Server and storage bundle, #1042 v1</div>
+<div class="pcard"><div class="row"><b>Steps to unlock pricing guidance</b><span>${d}/5 done</span></div><div class="pbar"><i style="width:${d*20}%"></i></div></div>
+<div class="pcard"><b>Customer information</b><small>Sample customer: Northwind Storage</small>
+<label>Company size</label><div class="pcs">${chips('fte')}</div>
+<label>Payment terms</label><div class="pcs">${chips('terms')}</div></div>
+<div class="pcard"><b>Deal information</b>
+<label>Deal registration status</label><div class="pcs">${chips('reg')}</div>
+<label>Renewal status</label><div class="pcs">${chips('ren')}</div>
+<label>Fulfillment type, select all that apply</label><div class="pcs">${chips('ful',1)}</div>
+<label>Takeover status</label><div class="pcs">${chips('take')}</div></div>
+<button class="pbtn alt" data-act="sample">Fill in sample answers</button><button class="pbtn" data-go="1">Next: line items</button>`;
+ if(PQ.tab===1)return `<div class="ph-t">SKU information</div>
+<div class="pcard"><label style="margin-top:0">Bulk item class</label><div class="pcs">${CLS.map(c=>`<button class="pc" data-b="${c}" aria-pressed="${PQ.bulk===c}">${c}</button>`).join('')}</div>
+<button class="pbtn alt" data-act="apply">Apply to selected</button><button class="pbtn alt" data-act="fam">${PQ.fam?'Hide product families':'Match product families'}</button></div>
+<div class="pcard">${LN.map(l=>`<div class="li"><input type="checkbox" data-s="${l.id}" ${PQ.sel[l.id]?'checked':''} aria-label="Select ${l.n}"><div>${l.n}<small>${PQ.cls[l.id]||'Unclassified'}</small>${PQ.fam?`<span class="fam">${l.fam}</span>`:''}</div><b>${money(l.p)}</b></div>`).join('')}</div>
+<button class="pbtn" data-go="2" ${d<5?'disabled':''}>See pricing guidance</button>`;
+ if(PQ.tab===3)return `<div class="ph-t">Edit price and/or margin</div>
+<div class="pcard"><div class="row"><b>Deal margin</b><b id="tm"></b></div><small>COGS is locked to the negotiated cost. Move a slider to change a unit price.</small></div>
+<div class="pcard">${LN.map(l=>`<label>${l.n}</label><div class="row"><b id="pv-${l.id}"></b><span id="mv-${l.id}"></span></div><input class="rg" type="range" data-e="${l.id}" min="${l.c}" max="${Math.round(l.c*1.5)}" step="500" value="${pr(l)}" aria-label="Unit price for ${l.n}"><small>COGS ${money(l.c)}, locked</small>`).join('')}</div>
+<button class="pbtn" data-go="2">See guidance</button><button class="pbtn alt" data-act="reset">Reset to original quote</button>`;
+ const t=tot(),b=base(),bd=band(t.m),gap=Math.max(0,TARGET/100*t.p-t.g),rev=PQ.mode!=='orig'||Object.keys(PQ.ep).length>0,sz=(PQ.f.fte||'Small').split(',')[0].toLowerCase();
+ const sum=k=>LN.reduce((a,l)=>a+l[k],0),pct=Math.min(95,Math.max(5,Math.round(56-(t.m-b.m)*5.5))),long=/60|90/.test(PQ.f.terms||'');
+ return `<div class="ph-t">PriceIQ guidance: Server and storage bundle</div>
+<div class="pcard"><small>Quote data refreshed 3 min ago</small><b>Northwind Storage</b><small>Quote #1042</small><div class="pcs" style="margin-top:6px"><span class="fam">Transactional</span><span class="fam">${PQ.f.ren||'New business'}</span><span class="fam">${PQ.f.reg||'No deal registration'}</span></div></div>
+<div class="gcard"><div class="row"><span>${rev?'Revised margin':'Current margin'}</span><b class="pill" id="gs"></b></div><div class="gnum" id="gm">0%</div>
+<div class="gbar"><i id="gf"></i><u style="left:${TARGET/25*100}%"></u><u class="st" style="left:80%"></u></div>
+<div class="row" style="font-size:11px;margin-bottom:8px"><span>0%</span><span>${TARGET}% target</span><span style="color:#8DB6FF">20% stretch</span></div>
+<div class="gr"><span>Revenue</span><b>${money(t.p)}</b></div><div class="gr"><span>COGS</span><b>${money(t.c)}</b></div><div class="gr"><span>Gross profit</span><b>${money(t.g)}</b></div><div class="gr"><span>Target gross profit</span><b>${money(TARGET/100*t.p)}</b></div></div>
+<div class="gcard" style="background:#12284F"><b>Observations</b>
+<div class="gr" style="margin-top:6px"><span>Gap to target</span><b>${money(gap)} (${(gap/t.p*100).toFixed(1)}% GP)</b></div>
+<div class="gr"><span>Comparable deals with higher margins</span><b>${pct}%</b></div>
+<div class="gr"><span>Outstanding A/R</span><b>$154K</b></div>${long?`<div class="gr"><span>Extended payment terms</span><b>${PQ.f.terms}</b></div>`:''}
+<small style="display:block;color:#9FB2D9;font-size:11px;margin-top:6px">Comparable ${sz} deals on ${PQ.f.terms||'Net 30'} closed at a median 17.2% margin. Sample data.</small></div>
+${rev?'':`<div class="gcard" style="background:#0F3A44;font-size:12px"><b>Suggested improvements</b><br>Reach ${TARGET}% GP with +${money(sum('r')-b.p)} revenue, or 20% GP with +${money(sum('s')-b.p)}.</div>`}
+<div class="pcard"><b>Suggested pricing</b>${LN.map(l=>`<div class="li" style="grid-template-columns:1fr auto"><div>${l.n}</div><div>${pr(l)!==l.p?`<s>${money(l.p)}</s> <span class="up">${money(pr(l))}</span>`:money(l.p)}</div></div>`).join('')}</div>
+<button class="pbtn grn" data-act="target" ${PQ.mode==='target'?'disabled':''}>Accept suggestion (Target)</button><button class="pbtn" data-act="stretch" ${PQ.mode==='stretch'?'disabled':''}>Accept suggestion (Stretch)</button><button class="pbtn alt" data-go="3">Edit price and/or margin</button><button class="pbtn alt" data-act="reset" ${rev?'':'disabled'}>Reset to original quote</button>
+<div class="pcard" style="margin-top:10px"><b>Additional data</b>${Object.keys(CTX).map(k=>`<button class="ctx" data-o="${k}" aria-expanded="${PQ.open===k}"><b>${CTX[k][0]}</b><small>${CTX[k][1]}</small></button>${PQ.open===k?`<div class="cb">${ctxBody(k)}</div>`:''}`).join('')}</div>`;
+}
+function paintG(){
+ const gm=$('gm'),gf=$('gf');if(!gm)return;
+ const t=tot(),from=PQ.shown==null?t.m:PQ.shown,bd=band(t.m);PQ.shown=t.m;
+ gm.className='gnum '+bd;gf.style.background=BC[bd];$('gs').textContent=BN[bd];$('gs').style.color=BC[bd];
+ gf.style.width=from/25*100+'%';gf.offsetWidth;gf.style.width=t.m/25*100+'%';
+ const dur=matchMedia('(prefers-reduced-motion:reduce)').matches?0:600,t0=performance.now();
+ (function f(now){const k=dur?Math.min(1,(now-t0)/dur):1;gm.textContent=(from+(t.m-from)*k).toFixed(1)+'%';if(k<1)requestAnimationFrame(f)})(t0)}
+function paintE(){LN.forEach(l=>{const p=pr(l);$('pv-'+l.id).textContent=money(p);$('mv-'+l.id).textContent=((p-l.c)/p*100).toFixed(1)+'% margin'});$('tm').textContent=tot().m.toFixed(1)+'%'}
+function draw(){
+ const ps=$('ps'),y=ps.scrollTop;ps.innerHTML=screen();ps.scrollTop=y;
+ if(PQ.tab===2)paintG();if(PQ.tab===3)paintE();
+ $('pqTabs').innerHTML=['1 Quote setup','2 Line items','3 Guidance','4 Edit prices'].map((n,i)=>`<button class="chip" data-t="${i}" aria-pressed="${PQ.tab===i}" ${i>1&&done()<5?'disabled title="Finish quote setup to unlock guidance"':''}>${n}${i>1&&done()<5?' (locked)':''}</button>`).join('');
+ const a=ANN[PQ.tab],b=base(),t=tot(),d=t.m-b.m;
+ $('ann').innerHTML=`<h3>${a[0]}</h3><p>${a[1]}</p>`+(PQ.tab===2&&Math.abs(d)>.05?`<div class="ba"><div><small>Margin</small><b>${b.m.toFixed(1)}% to ${t.m.toFixed(1)}%</b></div><div><small>Change</small><b>${d>=0?'+':''}${d.toFixed(1)} pts</b></div><div><small>Gap to target</small><b>${money(Math.max(0,TARGET/100*b.p-b.g))} to ${money(Math.max(0,TARGET/100*t.p-t.g))}</b></div></div>`:'')}
+$('ps').addEventListener('click',e=>{
+ const b=e.target.closest('button');if(!b)return;const d=b.dataset;
+ if(d.go){PQ.tab=+d.go;draw();$('ps').scrollTop=0;return}
+ if(d.g){if(d.g==='ful')PQ.ful[d.v]=!PQ.ful[d.v];else PQ.f[d.g]=d.v}
+ else if(d.b)PQ.bulk=d.b;
+ else if(d.act==='apply')LN.forEach(l=>{if(PQ.sel[l.id])PQ.cls[l.id]=PQ.bulk});
+ else if(d.act==='fam')PQ.fam=!PQ.fam;
+ else if(d.act==='target'||d.act==='stretch'){PQ.mode=d.act;PQ.ep={}}
+ else if(d.act==='sample')PQ.f={fte:'Enterprise, over 5K',terms:'Net 90',reg:'No deal registration',ren:'New business',take:'Regular opportunity'};
+ else if(d.act==='reset'){PQ.mode='orig';PQ.ep={}}
+ else if(d.o)PQ.open=PQ.open===d.o?null:d.o;
+ draw()});
+$('ps').addEventListener('input',e=>{const i=e.target.dataset.e;if(i){PQ.ep[i]=+e.target.value;paintE()}});
+$('ps').addEventListener('change',e=>{const s=e.target.dataset.s;if(s)PQ.sel[s]=e.target.checked?1:0});
+$('pqTabs').addEventListener('click',e=>{const b=e.target.closest('button[data-t]');if(b&&!b.disabled){PQ.tab=+b.dataset.t;draw();$('ps').scrollTop=0}});
+draw();
+
+const HG=[
+{n:'Complete quote setup',w:'Inside sales rep (ISR)',s:[['1A','Fill out customer information','New customers only. Existing customers fill in automatically from their history.'],['1B','Fill out deal information','Never filled in automatically, so it is always completed by hand.'],['1C','Assign an item class to every new SKU','To update many at once, tick the checkboxes, pick a bulk item class, then choose Apply to selected.'],['1D','Generate product families and practice areas'],['1E','Check that the checklist shows every item complete'],['1F','Confirm to send the quote to the rep']],v:'<span>Bulk item class</span><span class="mb o">Select item class</span><span class="mb o">Apply to selected</span><span class="mb">Confirm, send to review</span>'},
+{n:'View core margin guidance',w:'Rep',s:[['2A','Open any active deal in the quote inbox'],['2B','View the deal score and margin targets']],v:'<b style="font-size:1.6rem;color:#E5484D">9.5%</b><span class="rb"><i style="width:38%"></i></span><span>16% target</span>'},
+{n:'View additional deal insights',w:'Rep',s:[['3A','View extra COGS data at the SKU level'],['3B','View customer history, similar green deals, and smart facts']],v:'<span class="mb o">COGS detail</span><span class="mb o">Customer history</span><span class="mb o">Similar green deals</span><span class="mb o">Smart facts</span>'},
+{n:'Iterate on margin',w:'Rep',s:[['4A','Accept a recommended margin','Solution deals: accept Target or Stretch. Transactional deals: accept Target.'],['4B','Or edit price at the SKU level','Unit price and margin can change, but COGS stays locked to the negotiated cost. If a new cost is negotiated, update it in the quoting system and refresh the guidance.']],v:'<span class="mb g">Accept suggestion (Target)</span><span class="mb">Accept suggestion (Stretch)</span><span class="mb o">Edit price and/or margin</span>'},
+{n:'Finalize the quote',w:'Rep',s:[['5A','Select the green Confirm button'],['5B','Choose where the finalized quote goes','Write the finished quote back to the quoting system, or open an Outlook email with the quote attached, addressed to yourself or the ISR.']],v:'<span class="mb g">Confirm</span><span>then choose</span><div class="dlg"><b>Confirm pricing updates</b><small>Where should the quote go next?</small><div class="opt"><b>Push updates to the quoting system</b><small>Sync the latest pricing back.</small></div><div class="opt"><b>Send or populate in Outlook</b><small>Drafts an email with the quote attached. Send to: <span class="mb g" style="padding:2px 8px">Myself</span> <span class="mb o" style="padding:2px 8px">ISR</span></small></div></div>'}];
+let hg=0;
+function drawHG(){
+ $('hgs').innerHTML=HG.map((x,i)=>`<button role="tab" data-h="${i}" aria-selected="${i===hg}"><i>${i+1}</i>${x.n}</button>`).join('');
+ const x=HG[hg];
+ $('hgd').innerHTML=`<span class="role">${x.w}</span><h4>${x.n}</h4><ul class="sst">${x.s.map(y=>`<li><b>${y[0]}</b><div>${y[1]}${y[2]?`<small>${y[2]}</small>`:''}</div></li>`).join('')}</ul><div class="mk">${x.v}</div>`}
+$('hgs').addEventListener('click',e=>{const b=e.target.closest('button');if(b){hg=+b.dataset.h;drawHG()}});
+drawHG();
+
+/* Design evolution */
+function gp(o){
+ const bd=band(o.m),c=BC[bd],R=a=>a.map(r=>`<div class="gr"><span>${r[0]}</span><b>${r[1]}</b></div>`).join('');
+ return `<div class="ph-t">PriceIQ guidance</div><div class="gcard${o.hl?' hl':''}"><div class="row"><span>${o.lab}</span><b class="pill" style="color:${c}">${BN[bd]}</b></div><div class="gnum ${bd}" style="font-size:38px">${o.m.toFixed(1)}%</div><div class="gbar"><i style="width:${o.m/25*100}%;background:${c}"></i><u style="left:64%"></u>${o.st?'<u class="st" style="left:80%"></u>':''}</div><div class="row" style="font-size:10px;margin-bottom:6px"><span>0%</span><span>16% target</span>${o.st?'<span style="color:#8DB6FF">20% stretch</span>':''}</div>${R(o.rows)}</div><div class="gcard" style="background:#12284F"><b>Observations</b>${R(o.obs)}</div>${o.btn.map(b=>`<div class="pbtn ${b[1]}">${b[0]}</div>`).join('')}`}
+const EVO=[
+['Earlier version: one recommendation','A single Accept suggestion button, with a stat on comparable deals. The score and target were shown for each deal from its current pricing. The pricing model behind it was built on closed-won deals and co-developed with leaders.',
+ gp({lab:'Current margin',m:14,hl:1,rows:[['Revenue','$250,000'],['COGS','$215,000'],['Gross profit','$35,000'],['Target gross profit','$40,000']],obs:[['Gap to target','$5,000 (2.0% GP)'],['Comparable deals with higher margins','56%'],['Outstanding A/R','$154K'],['Extended payment terms','Net 60']],btn:[['Accept suggestion','grn'],['Edit price and/or margin','alt'],['Confirm pricing updates','alt']]})],
+['Final: target and stretch','Adds a stretch goal next to the target, red, yellow, and green bands, and deal flags for receivables and payment terms.',
+ gp({lab:'Current margin',m:8.4,st:1,rows:[['Revenue','$250,000'],['COGS','$229,000'],['Gross profit','$21,000'],['Target gross profit','$40,000']],obs:[['Gap to target','$19,000 (7.6% GP)'],['Outstanding A/R','$154K'],['Extended payment terms','Net 90']],btn:[['Accept suggestion (Target)','grn'],['Accept suggestion (Stretch)',''],['Edit price and/or margin','alt']]})],
+['Final: after accepting','The screen flips to a revised margin in green and the gap closes to zero. Reset to original quote appears so a rep can undo and compare.',
+ gp({lab:'Revised margin',m:16.4,st:1,rows:[['Revenue','$274,000'],['COGS','$229,000'],['Gross profit','$45,000'],['Target gross profit','$43,840']],obs:[['Gap to target','$0 (0.0% GP)'],['Outstanding A/R','$154K'],['Extended payment terms','Net 90']],btn:[['Reset to original quote','alt'],['Edit price and/or margin','alt']]})],
+['Admin tools','Controls for demos and pilot support: sync a new quote, mark one stale, or reset it to new.',
+ '<div class="ph-t">Admin tools</div><div class="pbtn">Refresh from quoting system</div><div class="pcard" style="margin-top:8px"><small>Signed in as pilot viewer (admin)</small><label>View as</label><span class="pc" style="display:inline-block">Admin full view</span><label>Quote number</label><span class="pc" style="display:inline-block">#1042</span></div><div class="pbtn alt">Sync new quote</div><div class="pbtn alt">Mark stale (demo)</div><div class="pbtn alt">Reset quote to New</div><div class="pcard" style="margin-top:12px"><small>Back to quote inbox</small><b>Quote setup: Server and storage bundle, #1042 v1</b></div><div class="pbtn">Confirm, send to review</div>']];
+$('evo').innerHTML=EVO.map(e=>`<figure><div class="phone mini" role="img" aria-label="${e[0]}"><div class="sb">9:41</div><div class="ps">${e[2]}</div></div><figcaption><b>${e[0]}</b><p>${e[1]}</p></figcaption></figure>`).join('');
+/* in-page links stay on this page */
+document.querySelectorAll('a[href^="#"]').forEach(a=>a.addEventListener('click',e=>{const t=document.querySelector(a.getAttribute('href'));if(t){e.preventDefault();t.scrollIntoView({behavior:matchMedia('(prefers-reduced-motion:reduce)').matches?'auto':'smooth'})}}));
+</script>
+</body>
+</html>
